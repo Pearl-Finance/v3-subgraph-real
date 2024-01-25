@@ -1,7 +1,7 @@
 {
-  "name": "uniswap-v3-subgraph",
-  "version": "1.0.0",
-  "repository": "https://github.com/graphprotocol/uniswap-v3-subgraph",
+  "name": "pearlv2-univ3-subgraph",
+  "version": "1.0.2",
+  "repository": "https://github.com/Pearl-Finance/v3-subgraph-real",
   "license": "GPL-3.0-or-later",
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",

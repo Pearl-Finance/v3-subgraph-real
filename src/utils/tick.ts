@@ -47,12 +47,22 @@ export function feeTierToTickSpacing(feeTier: BigInt): BigInt {
   if (feeTier.equals(BigInt.fromI32(3000))) {
     return BigInt.fromI32(60)
   }
+  if (feeTier.equals(BigInt.fromI32(1000))) {
+    return BigInt.fromI32(20)
+  }
   if (feeTier.equals(BigInt.fromI32(500))) {
     return BigInt.fromI32(10)
   }
   if (feeTier.equals(BigInt.fromI32(100))) {
     return BigInt.fromI32(1)
   }
+  // custom spacing
+  try {
+    const multiplier = feeTier.div(BigInt.fromI32(100));
+    return BigInt.fromI32(1).times(multiplier);
+  } catch (error) { 
+    throw Error(`Unexpected fee tier ${feeTier}`)
+  }
+  
 
-  throw Error('Unexpected fee tier')
 }
