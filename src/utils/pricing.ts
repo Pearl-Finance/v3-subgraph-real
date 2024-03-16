@@ -4,25 +4,28 @@ import { Bundle, Pool, Token } from './../types/schema'
 import { BigDecimal, BigInt } from '@graphprotocol/graph-ts'
 import { exponentToBigDecimal, safeDiv } from '../utils/index'
 
-const WETH_ADDRESS = '0x9801EEB848987c0A8d6443912827bD36C288F8FB'
-const USDC_WETH_03_POOL = '0x6638E2bbEa75e42988467c3056b645fF6bfA8C44'
+const WETH_ADDRESS = '0x0c68a3c11fb3550e50a4ed8403e873d367a8e361';
+const USTB_WETH_03_POOL = '0x9251126025b965e977e947090a8ef554549f5150';
 
 // token where amounts should contribute to tracked volume and liquidity
-// usually tokens that many tokens are paired with s
+// usually tokens that many tokens are paired with
 export let WHITELIST_TOKENS: string[] = [
   WETH_ADDRESS, // WETH
-  '0x665D4921fe931C0eA1390Ca4e0C422ba34d26169', // DAI
-  '0xabAa4C39cf3dF55480292BBDd471E88de8Cc3C97', // USDC
-  '0xd856A706eF29a9170F624907f576f60f432131Ae', // USTB
+  // '0x665d4921fe931c0ea1390ca4e0c422ba34d26169', // DAI
+  '0xdbabef6adc0a6f0722472411c51dd73720142c72', // USDT
+  '0x2fab7758c3efdf392e84e89ece376952eb00ab2a', // USDC
+  '0x83fedbc0b85c6e29b589a6bdefb1cc581935ecd', // USTB
 ]
 
 let STABLE_COINS: string[] = [
-  '0x665D4921fe931C0eA1390Ca4e0C422ba34d26169', // DAI
-  '0xabAa4C39cf3dF55480292BBDd471E88de8Cc3C97', // USDC
-  '0xd856A706eF29a9170F624907f576f60f432131Ae', // USTB
+  // '0x665d4921fe931c0ea1390ca4e0c422ba34d26169', // DAI
+  '0xdbabef6adc0a6f0722472411c51dd73720142c72', // USDT
+  '0x2fab7758c3efdf392e84e89ece376952eb00ab2a', // USDC
+  '0x83fedbc0b85c6e29b589a6bdefb1cc581935ecd', // USTB
 ]
 
-let MINIMUM_ETH_LOCKED = BigDecimal.fromString('60')
+
+let MINIMUM_ETH_LOCKED = BigDecimal.fromString('0.01')
 
 let Q192 = 2 ** 192
 export function sqrtPriceX96ToTokenPrices(sqrtPriceX96: BigInt, token0: Token, token1: Token): BigDecimal[] {
@@ -39,7 +42,7 @@ export function sqrtPriceX96ToTokenPrices(sqrtPriceX96: BigInt, token0: Token, t
 
 export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
-  let usdcPool = Pool.load(USDC_WETH_03_POOL) // dai is token0
+  let usdcPool = Pool.load(USTB_WETH_03_POOL) // dai is token0
   if (usdcPool !== null) {
     return usdcPool.token0Price
   } else {

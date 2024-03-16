@@ -57,12 +57,10 @@ export function feeTierToTickSpacing(feeTier: BigInt): BigInt {
     return BigInt.fromI32(1)
   }
   // custom spacing
-  try {
-    const multiplier = feeTier.div(BigInt.fromI32(100));
-    return BigInt.fromI32(1).times(multiplier);
-  } catch (error) { 
-    throw Error(`Unexpected fee tier ${feeTier}`)
+  if (feeTier.mod(BigInt.fromI32(100)).equals(BigInt.fromI32(0))) {
+    return feeTier.div(BigInt.fromI32(100));
   }
   
+  throw Error(`Unexpected fee tier ${feeTier}`)
 
 }

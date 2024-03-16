@@ -1,6 +1,6 @@
 {
   "name": "pearlv2-univ3-subgraph",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "repository": "https://github.com/Pearl-Finance/v3-subgraph-real",
   "license": "GPL-3.0-or-later",
   "scripts": {
