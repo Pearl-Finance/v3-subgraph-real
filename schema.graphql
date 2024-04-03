@@ -311,6 +311,7 @@ type Mint @entity {
   tickUpper: BigInt!
   # order within the txn
   logIndex: BigInt
+  actualLiquidity: BigInt
 }
 
 type Burn @entity {

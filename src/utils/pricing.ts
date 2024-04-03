@@ -5,22 +5,22 @@ import { BigDecimal, BigInt } from '@graphprotocol/graph-ts'
 import { exponentToBigDecimal, safeDiv } from '../utils/index'
 
 const WETH_ADDRESS = '0x0c68a3c11fb3550e50a4ed8403e873d367a8e361';
-const USTB_WETH_03_POOL = '0x9251126025b965e977e947090a8ef554549f5150';
+const USTB_WETH_03_POOL = '0x1966c573f9f9fa58caaf618fce84335e061f8f32';
 
 // token where amounts should contribute to tracked volume and liquidity
 // usually tokens that many tokens are paired with
 export let WHITELIST_TOKENS: string[] = [
   WETH_ADDRESS, // WETH
-  // '0x665d4921fe931c0ea1390ca4e0c422ba34d26169', // DAI
-  '0xdbabef6adc0a6f0722472411c51dd73720142c72', // USDT
-  '0x2fab7758c3efdf392e84e89ece376952eb00ab2a', // USDC
+  '0x3f93bebad7ba4d7a5129ea8159a5829eacb06497', // DAI
+  '0x42101d328739672a4a8940173507901d069efaa8', // USDT
+  '0x922af5e40d54bf866588c9251a974422c20c7cb9', // USDC
   '0x83fedbc0b85c6e29b589a6bdefb1cc581935ecd', // USTB
 ]
 
 let STABLE_COINS: string[] = [
-  // '0x665d4921fe931c0ea1390ca4e0c422ba34d26169', // DAI
-  '0xdbabef6adc0a6f0722472411c51dd73720142c72', // USDT
-  '0x2fab7758c3efdf392e84e89ece376952eb00ab2a', // USDC
+  '0x3f93bebad7ba4d7a5129ea8159a5829eacb06497', // DAI
+  '0x42101d328739672a4a8940173507901d069efaa8', // USDT
+  '0x922af5e40d54bf866588c9251a974422c20c7cb9', // USDC
   '0x83fedbc0b85c6e29b589a6bdefb1cc581935ecd', // USTB
 ]
 

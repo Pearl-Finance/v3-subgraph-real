@@ -10,9 +10,9 @@ dataSources:
     name: Factory
     network: tangible-unreal
     source:
-      address: '0xDfCD83D2F29cF1E05F267927C102c0e3Dc2BD725'
+      address: '0x579485AC5737c0A729908d5EA19D1054d275393F'
       abi: Factory
-      startBlock: 2890
+      startBlock: 15608
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -39,9 +39,9 @@ dataSources:
     name: NonfungiblePositionManager
     network: tangible-unreal
     source:
-      address: '0x5D430AA607EC2D0Aa75c711D584A008F9847f8d9'
+      address: '0xfF9B296b0f6194153c80315fd9929f2BF34641b6'
       abi: NonfungiblePositionManager
-      startBlock: 2903
+      startBlock: 15618
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -60,7 +60,7 @@ dataSources:
         - name: ERC20
           file: ./abis/ERC20.json
       eventHandlers:
-        - event: IncreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+        - event: IncreaseLiquidity(indexed uint256,uint128,uint128,uint256,uint256)
           handler: handleIncreaseLiquidity
         - event: DecreaseLiquidity(indexed uint256,uint128,uint256,uint256)
           handler: handleDecreaseLiquidity
@@ -94,7 +94,7 @@ templates:
           handler: handleInitialize
         - event: Swap(indexed address,indexed address,int256,int256,uint160,uint128,int24)
           handler: handleSwap
-        - event: Mint(address,indexed address,indexed int24,indexed int24,uint128,uint256,uint256)
+        - event: Mint(address,indexed address,indexed int24,indexed int24,uint128,uint256,uint256,uint128)
           handler: handleMint
         - event: Burn(indexed address,indexed int24,indexed int24,uint128,uint256,uint256)
           handler: handleBurn

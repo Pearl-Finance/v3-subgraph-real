@@ -120,6 +120,7 @@ export function handleMint(event: MintEvent): void {
   mint.tickLower = BigInt.fromI32(event.params.tickLower)
   mint.tickUpper = BigInt.fromI32(event.params.tickUpper)
   mint.logIndex = event.logIndex
+  mint.actualLiquidity = event.params.actualLiquidity
 
   // tick entities
   let lowerTickIdx = event.params.tickLower

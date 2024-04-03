@@ -149,6 +149,12 @@
       },
       {
         "indexed": false,
+        "internalType": "uint128",
+        "name": "actualLiquidity",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
         "internalType": "uint256",
         "name": "amount0",
         "type": "uint256"
@@ -497,7 +503,7 @@
     "outputs": [
       {
         "internalType": "uint128",
-        "name": "liquidity",
+        "name": "actualLiquidity",
         "type": "uint128"
       },
       {
@@ -612,7 +618,7 @@
       },
       {
         "internalType": "uint128",
-        "name": "liquidity",
+        "name": "actualLiquidity",
         "type": "uint128"
       },
       {
