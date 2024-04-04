@@ -103,7 +103,7 @@ export function handleIncreaseLiquidity(event: IncreaseLiquidity): void {
   let amount0 = convertTokenToDecimal(event.params.amount0, token0.decimals)
   let amount1 = convertTokenToDecimal(event.params.amount1, token1.decimals)
 
-  position.liquidity = position.liquidity.plus(event.params.liquidity)
+  position.liquidity = position.liquidity.plus(event.params.actualLiquidity)
   position.depositedToken0 = position.depositedToken0.plus(amount0)
   position.depositedToken1 = position.depositedToken1.plus(amount1)
 
